@@ -1,0 +1,75 @@
+<!doctype html><meta charset=utf-8><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{background:#F7F5F2;font-family:"PingFang TC","Noto Sans TC",sans-serif;color:#1F1B1A;-webkit-font-smoothing:antialiased}
+.s{position:relative;width:1080px;height:1350px;padding:84px 88px 0;display:flex;flex-direction:column}
+.rail{position:absolute;right:0;top:0;width:10px;height:1350px;background:#B23A48}
+.kicker{font-size:22px;font-weight:700;letter-spacing:.16em;color:#B23A48}
+h1{font-size:66px;line-height:1.22;font-weight:800;margin-top:16px;letter-spacing:-.015em}
+.lead{font-size:31px;line-height:1.6;color:#3A3331;margin-top:20px;width:860px}
+.stage{flex:1;display:flex;flex-direction:column;justify-content:center;margin:18px 0 0}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;font-size:21px;letter-spacing:.1em;color:#6B625E;padding-bottom:46px;margin-top:auto}
+.foot b{color:#B23A48;font-weight:800}
+.src{font-size:17px;color:#8A8078;letter-spacing:0;margin-bottom:8px}
+/* 1: 選單被拿走 */
+.pick{width:860px}
+.rowx{display:flex;align-items:center;gap:18px;padding:16px 20px;background:#fff;border:1px solid #E3DCD6;border-radius:8px;margin-bottom:10px;font-size:27px;font-weight:700;color:#8A8078}
+.rowx .dot{width:12px;height:12px;border-radius:50%;background:#D8D0CA}
+.rowx.strike{text-decoration:line-through;color:#B0A79F}
+.now{width:860px;margin-top:6px;background:#1F1B1A;color:#F7F5F2;border-radius:10px;padding:26px 28px;display:flex;align-items:center;justify-content:space-between}
+.now .big{font-size:44px;font-weight:800;letter-spacing:.02em}
+.now .sub{font-size:22px;color:#C9C0BA;margin-top:6px;font-weight:400}
+.stamp{position:absolute;right:104px;top:0;transform:rotate(-7deg);border:3px solid #B23A48;color:#B23A48;font-size:20px;font-weight:800;padding:8px 14px;border-radius:4px;letter-spacing:.06em}
+/* 2: 分流 */
+.flow{width:880px}
+.node{background:#fff;border:1px solid #E3DCD6;border-radius:10px;padding:18px 22px}
+.auto{background:#1F1B1A;color:#F7F5F2;border:none;text-align:center;font-size:34px;font-weight:800;padding:20px}
+.branches{display:flex;gap:16px;margin-top:0}
+.branch{flex:1}
+.arrow{width:2px;background:#D8D0CA;height:28px;margin:0 auto}
+.dest{background:#fff;border:1px solid #E3DCD6;border-radius:10px;padding:22px;text-align:center}
+.dest .m{font-size:30px;font-weight:800}
+.dest .q{font-size:20px;color:#6B625E;margin-top:8px}
+.dest.hot{border:2px solid #B23A48}
+.dest.hot .m{color:#B23A48}
+.cap2{font-size:19px;color:#8A8078;text-align:center;margin-top:10px}
+/* 3: 價格 */
+.price{width:880px}
+.bar{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.bar .lbl{width:190px;font-size:24px;font-weight:700}
+.bar .track{flex:1;height:52px;background:#fff;border:1px solid #E3DCD6;border-radius:6px;position:relative;overflow:hidden}
+.bar .fill{height:100%;background:#E8E1DC}
+.bar.lock .fill{background:#B23A48}
+.bar .amt{width:130px;text-align:right;font-size:24px;font-weight:800}
+.bar .lockx{position:absolute;right:12px;top:12px;font-size:20px;color:#B23A48;font-weight:800}
+/* 4: 對照 */
+.ba{display:flex;gap:18px;width:880px}
+.pane{flex:1;background:#fff;border:1px solid #E3DCD6;border-radius:10px;padding:26px}
+.pane .h{font-size:19px;letter-spacing:.1em;color:#6B625E;font-weight:700}
+.pane .v{font-size:33px;font-weight:800;margin-top:14px;line-height:1.35}
+.pane .n{font-size:19px;color:#8A8078;margin-top:12px;line-height:1.5}
+.pane.hot{border:2px solid #B23A48}.pane.hot .h{color:#B23A48}
+.strike2{color:#B0A79F;text-decoration:line-through}
+/* 5: 清單 */
+.chk{width:880px}
+.itemx{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-top:1px solid #E3DCD6}
+.num{width:52px;height:52px;flex:0 0 52px;border-radius:50%;background:#B23A48;color:#fff;font-size:25px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.itemx .t{font-size:31px;font-weight:700}
+.itemx .d{font-size:21px;color:#6B625E;margin-top:6px}
+.cta{margin-top:26px;background:#1F1B1A;color:#F7F5F2;border-radius:10px;padding:26px 28px;display:flex;justify-content:space-between;align-items:center;font-size:27px;font-weight:800}
+.cta em{font-style:normal;color:#E8A0A9;font-size:22px;letter-spacing:.1em}
+</style>
+<div class="s"><div class="rail"></div>
+<div class="kicker">GEMINI 10 月改版</div>
+<h1>Gemini 免費版<br>不能再自選模型</h1>
+<div class="lead">10 月起，Gemini 免費版改成「自動」選模型，多數問題交給 Flash-Lite 回。</div>
+<div class="stage"><div class="pick" style="position:relative">
+  <div class="stamp">你已失去選擇權</div>
+  <div class="rowx strike"><span class="dot"></span>Flash-Lite</div>
+  <div class="rowx strike"><span class="dot"></span>Flash</div>
+  <div class="rowx strike"><span class="dot"></span>Pro</div>
+  <div class="now"><div><div class="big">AUTO</div><div class="sub">系統幫你挑，你不能自己選</div></div>
+  <div style="font-size:20px;color:#C9C0BA;text-align:right;line-height:1.5">10/9 起<br>沒有方案者</div></div>
+</div></div>
+<div class="foot"><div><div class="src">來源：Google 官方說明中心（2026-10-24 查閱）</div><span><b>1</b> / 5　　FreakyLab</span></div><span style="font-size:17px;color:#B0A79F">AI 工具追蹤｜每週一則</span></div>
+</div>
